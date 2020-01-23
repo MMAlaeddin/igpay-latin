@@ -8,12 +8,16 @@ $(document).ready(function(){
 		var vowels = ["a", "e", "i", "o", "u"];
 			vowels.forEach(function(vowel) {
 			if (userInput.charAt(0) === vowel) {
-			 $("#output").text(userInput + "way");	
-		
+			 $("#output").text(userInput + "way");
+
 			} else if (userInput.charAt(0) !== vowel) {
 				var separate = userInput.split("");
-					$("#output").text(separate);
-					console.log(separate);
+				var newSeparate = separate.shift() + "ay";
+				var missing = separate.splice(0) + newSeparate;
+				
+				// separate.push(pigLatin);
+					$("#output").text(missing);
+				
 			
 			// } else if (userInput.charAt(0) !== vowel) {
 			// 		var separate = userInput.split();
