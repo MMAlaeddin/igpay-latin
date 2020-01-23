@@ -6,15 +6,15 @@ $(document).ready(function(){
 		var pigLatin = [];
 
 		var vowels = ["a", "e", "i", "o", "u"];
-			vowels.forEach(function(vowel) {
-			if (userInput.charAt(0) === vowel) {
+			
+			if (vowels.includes(userInput.charAt(0))) {
 			 $("#output").text(userInput + "way");
 
 			} else if (userInput.charAt(0) !== vowel) {
 				var separate = userInput.split("");
 				var newSeparate = separate.shift() + "ay";
-				var missing = separate.splice(0) + newSeparate;
-				
+				var missing = separate.splice(0).join("") + newSeparate;
+				// var final = missing.join("");
 				// separate.push(pigLatin);
 					$("#output").text(missing);
 				
@@ -27,7 +27,6 @@ $(document).ready(function(){
 		
 			
 			}
-			});
-		
+				
 	});
 });
