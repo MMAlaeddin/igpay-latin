@@ -6,11 +6,11 @@ $(document).ready(function(){
 		var pigLatin = [];
 
 		var vowels = ["a", "e", "i", "o", "u"];
-			
+
 			if (vowels.includes(userInput.charAt(0))) {
 			 $("#output").text(userInput + "way");
 
-			} else if (userInput.charAt(0) !== vowel) {
+			} else if (userInput.charAt(0) !== vowels) {
 				var separate = userInput.split("");
 				var newSeparate = separate.shift() + "ay";
 				var missing = separate.splice(0).join("") + newSeparate;
